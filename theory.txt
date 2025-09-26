@@ -1,5 +1,3 @@
-
-=======
 java
 ->platform independent
 portability->write once and run anywhere
@@ -150,8 +148,79 @@ types to make it--
 
 12.wrapper class-chatgpt kar le and also upar bhi padh le already likh rakha h
 
-padhai karo
+---interface---
+-it is something which helps 2 system to interact with each other , without one system has to know the details
+    of other
+-helps to achieve abstraction
+-its decalaration consist of modifiers , interface keyword , interface name, comma separated list of parent interface
+and body
+-only public and default modifiers allowed
+-it can be extended from interfaces
+-why we need it
+1.abstraction
+2.polymorphism-can be used as a data type
+3.multiple inheritance
+---methods in interface---
+-all methods are implicitly public only
+-method can not be declared as final
+---fields in interface---
+-fields are public,static , final implicitly (constants)
+-cannot make fields private or protected
+---interface implementation---
+-overriding method can not have more restrict access specifiers
+-concrete class must override all the methods declared in the interface
+-abstract classes are not forced to override all the methods
+-a class can implement from multiple interfaces
+---nested interfaces---
+-nested interface declared within another interface
+-when you implement outer interface inner interface implementation is not required and vice versa
 
+-keep note of the diff between abstract class and the interface(chatgpt)
+---java8 interface features
+-default method-resolve the mandatory condition of implementing all the methods
+               -in multiple inheritance we have to define it by our own in the child class
+-static method-can provide implementation of the method in interface
+              -it cannot be overridden which implement the interface
+              -can access by using interface name itself
+              -by default public
+-private method and static private method(java9)
+    -can provide the implementation of the method but as a private access modifier in interface
+    -it brings more readability of the code
+    -it can be defined as static and non static
+    -from static method we can call only private static interface method
+    -private static method can be called from both static and non static
+    -private interface method can not be abstract means we have to provide the definition
+    -it can be used inside of the particular interface only
+
+-why static method can only call static variables
+    static int b=10;
+    public void funcc(int a){
+    return b+a;
+    }
+    public static void func(int a){
+    b=b+a;
+    }
+
+-functional interface(@FunctionalInterface) and lambda expression
+ -if an interface contains only 1 abstract method that is known as functional interface
+ -also known as SAM(single abstract method)
+ -implementation is divided into 3 types
+    -implements
+    -anonymous class
+    -using lambda expression-way to implement
+types of functional interface
+-consumer
+    -represent an operation that accept a single input parameter and returns no result
+    -package-java.util.function
+-supplier
+    -represent the supplier of the result accepts no input parameter but produce a result
+    -package-java.util.function
+-function
+    -represent function that accepts one argument process it and produce a result
+    -package-java.util.function
+-predicate
+    -represent function that accepts one argument process it and produce a boolean result
+    -package-java.util.function
 
 
 
@@ -294,13 +363,3 @@ Maven->its a project management tool
      2-.class
      3-.getclass
      it is included in java.lang.reflect
-
-
-
-
-
-                                                                                                                                    
-
-
-
->>>>>>> 1946e30 (eaghjkil)
